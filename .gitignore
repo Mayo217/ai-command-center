@@ -1,0 +1,14 @@
+# your data never goes in git
+tracker.db
+tracker.db-*
+team.json
+logs/
+state/
+backups/
+digests/
+# python / OS noise
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+config.json

@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONIOENCODING: utf-8
+      CCC_NO_LAUNCHCTL: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install into this runner's home
+        run: python install.py
+      - name: Self-test
+        run: python tests/selftest.py
+      - name: Hook tests
+        run: python tests/test_hooks.py
+      - name: CLI tests
+        run: python tests/test_cli.py
+      - name: AI tool adapter tests
+        run: python tests/test_agents.py

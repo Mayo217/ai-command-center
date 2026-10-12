@@ -1,0 +1,52 @@
+{
+  "port": 8790,
+  "python": "python",
+  "projects_dir": "~/.claude/projects",
+  "desktop": "~/Desktop",
+  "gate": {
+    "max_blocks_per_session": 3,
+    "min_summary_chars": 60,
+    "min_waive_reason_chars": 20,
+    "enabled": true
+  },
+  "substantive": {
+    "min_user_turns": 3,
+    "min_file_touches": 1
+  },
+  "ignore_globs": [
+    "/private/tmp/*",
+    "/tmp/*",
+    "*/scratchpad/*",
+    "*/.git/*",
+    "*/node_modules/*",
+    "*/__pycache__/*",
+    "*.pyc",
+    "*.log",
+    "*/logs/*",
+    "*/tracker.db*",
+    "*/state/*.json",
+    "*/.DS_Store",
+    "~/.claude/projects/*/memory/*",
+    "~/.claude/projects/*/*.jsonl",
+    "~/.claude/history.jsonl",
+    "~/.claude/todos/*",
+    "~/.claude/shell-snapshots/*",
+    "*/.claude/settings.json.bak-*",
+    "*/Trash/*",
+    "*/AppData/Local/Temp/*",
+    "C:/Windows/*",
+    "C:/Program Files*"
+  ],
+  "session_start_recent_items": 8,
+  "usage": {
+    "oauth_refresh": false,
+    "statusline_min_sample_seconds": 60,
+    "oauth_refresh_min_age_min": 2
+  },
+  "lint": {
+    "claude_md_max_bytes": 12000,
+    "skill_description_min_chars": 40,
+    "skill_max_bytes": 60000
+  },
+  "timezone": "local"
+}
